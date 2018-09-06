@@ -1,0 +1,13 @@
+<div class="card text-white bg-dark mb-2">
+  <div class="card-header p-2" (click)="onClick()">
+    <h5 class="my-0">{{ item.title }} <span class="badge badge-success" *ngIf="item.isNew">New!</span></h5>
+  </div>
+  <div class="card-body p-2">
+    <div class="container mb-2" (click)="onClick()">
+      <p class="card-text">{{ item.description }}</p>
+    </div>
+    <div *ngIf="showed" class="list-group text-dark">
+      <app-listening-item-part *ngFor="let part of item.parts" [part] = "part"></app-listening-item-part>
+    </div>
+  </div>
+</div>  

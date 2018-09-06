@@ -1,16 +1,28 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
+import { ListeningItemComponent } from './components/listening-item/listening-item.component';
+import { ListeningListComponent } from './components/listening-list/listening-list.component';
+import { ListeningService } from './services/listening.service';
+import { HttpModule } from '@angular/http';
+import { ListeningItemPartComponent } from './components/listening-item-part/listening-item-part.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ListeningItemComponent,
+    ListeningListComponent,
+    ListeningItemPartComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpModule,
+    AngularFontAwesomeModule
   ],
-  providers: [],
+  providers: [
+    ListeningService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
